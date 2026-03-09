@@ -41,7 +41,7 @@ This is a **team exercise**. You will work together in a shared Word document to
 
 ## 🧠 The Exercise
 
-As a team, your task is to open a shared Word document and write the complete, end-to-end process for making a Peanut Butter and Jelly sandwich — from acquiring the ingredients all the way through serving the final product. For every step in the process, your team must write the full description of what happens, the base case, at least two edge cases, at least one corner case, the failure path, and the acceptance criteria. The document must be written with enough clarity and detail that a developer who has never made a sandwich — and who will ask no follow-up questions — could build the process exactly as you intended.
+As a team, your task is to open a shared Word document and write the complete, end-to-end process for making a Peanut Butter and Jelly sandwich — from acquiring the ingredients all the way through serving the final product. For every step in the process, your team must write the full description of what happens, the base case, at least two edge cases, at least one corner case, the failure path, the acceptance criteria, and at least one Given / When / Then scenario. The document must be written with enough clarity and detail that a developer who has never made a sandwich — and who will ask no follow-up questions — could build the process exactly as you intended.
 
 ---
 
@@ -311,3 +311,31 @@ If your team cannot fully define a sandwich, your team is not ready to define a 
 Every assumption you skip becomes a bug. Every edge case you miss becomes a support ticket. Every corner case you overlook becomes a production incident.
 
 The sandwich is simple on purpose. The thinking — and the writing — is the exercise.
+
+---
+
+## 🚀 Good Start — But Did You Think of These?
+
+If your team completed the exercise, congratulations — you have a solid foundation. But requirements work is never truly finished. A good BA always asks: **what else did we miss?**
+
+Here are additional cases your team may not have considered. These are not trick questions — they are the exact type of gaps that appear in real features when a BA writes for one imaginary user instead of all real users.
+
+**Quantity — The Silent Assumption**
+The entire process assumes one sandwich for one user and never states it. What if the user wants two sandwiches? Or five? Quantity was never defined as an input, which means the ingredient validation logic, the spread amounts, and the serving step all break the moment a second sandwich is requested. Every process needs a quantity constraint — even if the answer is "always one."
+
+**Stale Bread — Quality vs. Expiry**
+Step 1 checks whether bread is expired. But what if the bread is stale — technically in-date, but dry, hard, or compromised in texture? Expiry and quality are not the same thing. Who defines the acceptable quality threshold, and what happens when bread passes the date check but fails the quality check?
+
+**Spread Placement — Another Silent Assumption**
+The process assumes peanut butter always goes on Slice 1 and jelly always goes on Slice 2, on separate slices. But what if the user wants both spreads on the same slice? Or peanut butter on both? The process never asks the user — it just decides. That is a missing requirement.
+
+**Dietary Constraints Beyond Allergy**
+The process handles nut allergies, but what about other constraints? A diabetic user may need to flag high-sugar jelly. A vegan user may need to validate that the bread and spreads meet dietary requirements. Allergy is one type of constraint — it is not the only one.
+
+**Open-Faced Sandwich**
+Step 6 assumes the sandwich is always closed — two slices pressed together. But what if the user wants an open-faced sandwich with no top slice? The process never validates this as a user preference. It silently builds a closed sandwich every time.
+
+**User Not Present at Serving**
+Step 7 assumes the user is ready and waiting when the sandwich is complete. But what if they are not? How long can the sandwich sit before it is no longer acceptable to serve? This is a time constraint that was never defined — and it directly connects to the soggy bread corner case in Step 7.
+
+> 💡 **Discussion prompt for your team:** Go back through your Word document. How many of these did you catch? How many slipped through? The ones that slipped through are exactly the gaps that become bugs, support tickets, and production incidents in real features.
