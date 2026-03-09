@@ -29,9 +29,26 @@ This is a **team exercise**. You will work together in a shared Word document to
 | **Corner Case** | Two or more unusual conditions happening at the same time. |
 | **Happy Path** | The full flow from start to finish when nothing goes wrong. |
 | **Failure Path** | What happens when a step cannot be completed? What does the system do next? |
+| **Boundary** | The exact line between what is acceptable and what is not. The BA must define this number or condition precisely — if they do not, the developer will guess, and that guess becomes a bug. |
 | **Given / When / Then** | A structured way to write acceptance criteria. Given = the starting state. When = the action that occurs. Then = the expected outcome. |
 | **User Story** | A short, plain-language description of a feature from the perspective of the user. Format: *As a [user], I want [something], so that [reason].* |
 | **INVEST** | The quality checklist every user story must pass before it is handed to a developer. See below. |
+
+## 🔑 Reference Example — The Sandwich
+
+Before you start writing, read through this reference. It shows all six concepts applied to the sandwich itself so you know exactly what each term looks like before you begin.
+
+**Base Case** — The user has all ingredients present, in-date, and at room temperature. The sandwich is made from start to finish without any interruptions.
+
+**Edge Case** — The bread is present but frozen. It is a valid ingredient — it is just not in a ready state. A thaw step must be inserted before the process can continue.
+
+**Corner Case** — The bread is frozen AND the jelly jar is expired AND the knife is not available. Three unusual conditions exist at the same time. Each must be resolved independently — fixing one does not fix the others.
+
+**Happy Path** — All ingredients are present and usable, both spreads are applied cleanly, the sandwich assembles without structural failure, and the user accepts it immediately upon serving.
+
+**Failure Path** — The jelly jar is contaminated with peanut butter and the user has a nut allergy. The process halts immediately. The jar is discarded. The process cannot continue until a clean replacement is sourced.
+
+**Boundary** — A driver with 3 or more violations is flagged as High Risk. Two violations — nothing happens. Three violations — the flag triggers. The BA must state that number explicitly. If they write "too many violations" instead of "3 or more," the developer has to guess where the line is — and that guess becomes a bug.
 
 ## 📋 INVEST Framework
 
@@ -61,6 +78,7 @@ Every case in this process is rated by complexity. This tells the development te
 | 🔴 **High** | Corner Case | Multiple unusual conditions at once. Requires defensive logic, fallbacks, and testing. |
 
 ## 🥪 Full Process: Making a PB&J Sandwich
+
 
 ### Step 1 — Acquire Ingredients
 
