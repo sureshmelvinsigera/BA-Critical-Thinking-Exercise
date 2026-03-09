@@ -6,15 +6,11 @@
 > **Deliverable:** A shared Word document completed as a team
 > **Goal:** Write the complete process for making a PB&J sandwich — covering base cases, edge cases, and corner cases — well enough that a developer could build it without asking a single question
 
----
-
 ## 🎯 Why This Exercise?
 
 Before a BA can write a feature, they must first think like a system.
 
 This exercise uses something everyone knows — making a Peanut Butter and Jelly sandwich — to train BAs to think logically, algorithmically, and completely. If a BA cannot fully define a PB&J sandwich, they are not ready to define a software feature.
-
----
 
 ## 📋 How This Works
 
@@ -23,8 +19,6 @@ This is a **team exercise**. You will work together in a shared Word document to
 **Each team member takes ownership of at least one step.** Collaborate, challenge each other's assumptions, and fill in what the next person missed. The goal is a complete document that leaves nothing to interpretation.
 
 > 📄 **Open the shared Word document and begin writing. Do not just discuss — write it down.**
-
----
 
 ## 📐 Terms You Must Know
 
@@ -36,14 +30,25 @@ This is a **team exercise**. You will work together in a shared Word document to
 | **Happy Path** | The full flow from start to finish when nothing goes wrong. |
 | **Failure Path** | What happens when a step cannot be completed? What does the system do next? |
 | **Given / When / Then** | A structured way to write acceptance criteria. Given = the starting state. When = the action that occurs. Then = the expected outcome. |
+| **User Story** | A short, plain-language description of a feature from the perspective of the user. Format: *As a [user], I want [something], so that [reason].* |
+| **INVEST** | The quality checklist every user story must pass before it is handed to a developer. See below. |
 
----
+## 📋 INVEST Framework
+
+Every user story in this document must meet the INVEST standard. If a story fails any one of these, rewrite it before handing it to the development team.
+
+| Letter | Stands For | What It Means |
+|---|---|---|
+| **I** | Independent | The story can be built without depending on another story being done first. |
+| **N** | Negotiable | The story is not a contract. The details can be discussed and adjusted with the team. |
+| **V** | Valuable | The story delivers clear value to the user or the business. If you cannot explain the value, the story should not exist. |
+| **E** | Estimable | The developer can estimate how long it will take. If they cannot, the story is too vague. |
+| **S** | Small | The story is small enough to complete within a single sprint. If it is too big, break it down. |
+| **T** | Testable | There is a clear way to verify the story is done. If it cannot be tested, it cannot be accepted. |
 
 ## 🧠 The Exercise
 
-As a team, your task is to open a shared Word document and write the complete, end-to-end process for making a Peanut Butter and Jelly sandwich — from acquiring the ingredients all the way through serving the final product. For every step in the process, your team must write the full description of what happens, the base case, at least two edge cases, at least one corner case, the failure path, the acceptance criteria, and at least one Given / When / Then scenario. The document must be written with enough clarity and detail that a developer who has never made a sandwich — and who will ask no follow-up questions — could build the process exactly as you intended.
-
----
+As a team, your task is to open a shared Word document and write the complete, end-to-end process for making a Peanut Butter and Jelly sandwich — from acquiring the ingredients all the way through serving the final product. For every step in the process, your team must write the full description of what happens, the complexity cases, the failure path, the acceptance criteria, at least one Given / When / Then scenario, and the user stories following the INVEST framework. The document must be written with enough clarity and detail that a developer who has never made a sandwich — and who will ask no follow-up questions — could build the process exactly as you intended.
 
 ## 📊 Complexity Scale
 
@@ -55,11 +60,7 @@ Every case in this process is rated by complexity. This tells the development te
 | 🟡 **Medium** | Edge Case | Unusual but valid condition. Requires conditional logic and validation. |
 | 🔴 **High** | Corner Case | Multiple unusual conditions at once. Requires defensive logic, fallbacks, and testing. |
 
----
-
 ## 🥪 Full Process: Making a PB&J Sandwich
-
----
 
 ### Step 1 — Acquire Ingredients
 
@@ -92,7 +93,13 @@ Before anything can happen, the required ingredients and tools must be present a
 > **When** all three blockers are detected simultaneously
 > **Then** each blocker is surfaced independently — resolving one does not clear the others — and the process cannot continue until all three are resolved
 
----
+**User Stories:**
+
+| # | Story | INVEST Check |
+|---|---|---|
+| S1-01 | As a user, I want the system to validate all required ingredients before the process starts, so that I am not blocked mid-way through by a missing item. | ✅ Independent · Valuable · Testable |
+| S1-02 | As a user with a dietary constraint, I want my constraints checked against all ingredients at the start, so that I never begin a process that cannot be safely completed for me. | ✅ Independent · Valuable · Testable |
+| S1-03 | As a user, I want each missing or unusable ingredient surfaced as a separate, specific error, so that I can resolve all blockers at once rather than one at a time. | ✅ Small · Estimable · Testable |
 
 ### Step 2 — Open the Bread
 
@@ -123,7 +130,13 @@ The bread loaf must be opened to expose individual slices. The packaging type de
 > **When** the BA attempts to open the bag
 > **Then** the bread is accessed, a substitute storage method is identified for the remaining bread, and the torn bag is not used for resealing
 
----
+**User Stories:**
+
+| # | Story | INVEST Check |
+|---|---|---|
+| S2-01 | As a user, I want the system to detect the bread packaging type automatically, so that the correct opening method is applied without me having to specify it. | ✅ Independent · Valuable · Estimable |
+| S2-02 | As a user, I want the system to skip the opening step if the bread is already open, so that the process does not perform unnecessary actions. | ✅ Small · Testable · Independent |
+| S2-03 | As a user, I want the system to identify a storage alternative when the bag is damaged, so that the remaining bread is not wasted after the sandwich is made. | ✅ Valuable · Testable · Small |
 
 ### Step 3 — Prepare Two Slices of Bread
 
@@ -154,7 +167,13 @@ Exactly two slices of bread are required. The steps to obtain them depend on whe
 > **When** the BA attempts to slice using a substitute tool
 > **Then** the bread is sliced with maximum care — any waste results in insufficient quantity and a process failure is raised immediately
 
----
+**User Stories:**
+
+| # | Story | INVEST Check |
+|---|---|---|
+| S3-01 | As a user, I want the system to detect whether bread is pre-sliced or unsliced, so that the slicing step is only triggered when it is actually needed. | ✅ Independent · Testable · Small |
+| S3-02 | As a user, I want to be prompted if the heel is the only remaining slice, so that I can decide whether it is acceptable before the process continues. | ✅ Negotiable · Valuable · Testable |
+| S3-03 | As a user, I want the system to halt and surface an error if fewer than two usable slices are available, so that I am not given a sandwich that cannot be properly assembled. | ✅ Independent · Testable · Small |
 
 ### Step 4 — Apply Peanut Butter
 
@@ -189,7 +208,13 @@ Peanut butter is spread on the top surface of one slice of bread using a knife.
 > **When** the BA reaches Step 4
 > **Then** this step is skipped entirely and the process proceeds directly to Step 5
 
----
+**User Stories:**
+
+| # | Story | INVEST Check |
+|---|---|---|
+| S4-01 | As a user, I want peanut butter spread evenly across the full surface of my slice, so that every bite has consistent flavour. | ✅ Valuable · Testable · Small |
+| S4-02 | As a user, I want the system to warn me if the peanut butter jar does not have enough to cover a full slice, so that I can source a new jar before the process begins. | ✅ Independent · Testable · Estimable |
+| S4-03 | As a user who requested a jelly-only sandwich, I want the peanut butter step skipped entirely, so that my sandwich is made according to my preference without manual intervention. | ✅ Independent · Valuable · Testable |
 
 ### Step 5 — Apply Jelly
 
@@ -226,7 +251,14 @@ Jelly is spread on the top surface of the second slice of bread using a knife.
 > **When** the BA reaches Step 5
 > **Then** a dedicated clean knife that has never contacted peanut butter is used — a wiped knife is not acceptable for this user type
 
----
+**User Stories:**
+
+| # | Story | INVEST Check |
+|---|---|---|
+| S5-01 | As a user, I want jelly spread evenly across the full surface of my slice, so that every bite has consistent flavour. | ✅ Valuable · Testable · Small |
+| S5-02 | As a user, I want the system to enforce a clean knife before it enters the jelly jar, so that cross-contamination from peanut butter is prevented. | ✅ Independent · Testable · Estimable |
+| S5-03 | As a user with a nut allergy, I want the system to halt and discard a contaminated jelly jar immediately, so that I am never served a sandwich that could cause an allergic reaction. | ✅ Independent · Valuable · Testable |
+| S5-04 | As a jelly-only user, I want the system to require a knife that has never contacted peanut butter — not just a wiped one — so that my safety constraint is fully honoured. | ✅ Independent · Testable · Small |
 
 ### Step 6 — Assemble the Sandwich
 
@@ -256,7 +288,13 @@ The two prepared slices are joined to form a single sandwich unit.
 > **When** the BA presses the slices together
 > **Then** the bread tears and filling overflows — the sandwich is unsalvageable, both slices are discarded, and the process restarts from Step 3
 
----
+**User Stories:**
+
+| # | Story | INVEST Check |
+|---|---|---|
+| S6-01 | As a user, I want the two slices joined with spread surfaces facing inward, so that the filling stays inside the sandwich and does not contact the outer surfaces. | ✅ Testable · Small · Valuable |
+| S6-02 | As a user, I want to specify my preferred cut style — diagonal or straight — before assembly is finalised, so that my sandwich is presented the way I want it. | ✅ Negotiable · Small · Testable |
+| S6-03 | As a user, I want the system to detect when a sandwich cannot be salvaged due to structural failure, so that the failed slices are discarded and the process restarts cleanly from Step 3. | ✅ Independent · Testable · Estimable |
 
 ### Step 7 — Serve
 
@@ -286,23 +324,31 @@ The completed sandwich is delivered to the end user in an acceptable condition.
 > **When** the BA attempts to serve it
 > **Then** the sandwich is rejected as unacceptable, discarded, and the process restarts from Step 3 — time-to-serve is flagged as a new constraint to be added to the process requirements
 
----
+**User Stories:**
+
+| # | Story | INVEST Check |
+|---|---|---|
+| S7-01 | As a user, I want my sandwich placed on a clean plate and served immediately after assembly, so that I receive it in the best possible condition. | ✅ Valuable · Testable · Small |
+| S7-02 | As a user travelling with my sandwich, I want it wrapped securely without compressing the bread, so that it arrives in an acceptable condition when I am ready to eat it. | ✅ Independent · Negotiable · Testable |
+| S7-03 | As a user, I want the system to flag when a sandwich has exceeded the maximum acceptable time before serving, so that I am never given a soggy or degraded sandwich. | ✅ Independent · Testable · Estimable |
+| S7-04 | As a user who has rejected a sandwich, I want the system to identify exactly which step caused the failure and restart from that point, so that I am not waiting for the entire process to restart unnecessarily. | ✅ Valuable · Testable · Small |
 
 ## ✅ Team Definition of Done
 
 Your Word document is complete when the team can answer YES to every item below:
 
 - [ ] Every step has a full written description
-- [ ] Every step has a clearly written base case
-- [ ] Every step has at least 2 edge cases
-- [ ] At least one corner case is documented across any two steps
+- [ ] Every step has a clearly written base case (🟢 Low)
+- [ ] Every step has at least 2 edge cases (🟡 Medium)
+- [ ] Every step has at least 1 corner case (🔴 High)
+- [ ] At least one corner case spans two steps
 - [ ] Every step has a defined failure path
 - [ ] Every step has written acceptance criteria
 - [ ] Every step has at least one Given / When / Then scenario
+- [ ] Every step has at least one user story
+- [ ] Every user story passes the INVEST framework
 - [ ] The document reads as if the team assumed the reader knows nothing
 - [ ] Every team member has contributed and reviewed at least one step
-
----
 
 ## 💬 Final Thought
 
@@ -311,8 +357,6 @@ If your team cannot fully define a sandwich, your team is not ready to define a 
 Every assumption you skip becomes a bug. Every edge case you miss becomes a support ticket. Every corner case you overlook becomes a production incident.
 
 The sandwich is simple on purpose. The thinking — and the writing — is the exercise.
-
----
 
 ## 🚀 Good Start — But Did You Think of These?
 
