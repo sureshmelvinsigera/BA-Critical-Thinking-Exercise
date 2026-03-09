@@ -48,7 +48,7 @@ Before you start writing, read through this reference. It shows all six concepts
 
 **Failure Path** — The jelly jar is contaminated with peanut butter and the user has a nut allergy. The process halts immediately. The jar is discarded. The process cannot continue until a clean replacement is sourced.
 
-**Boundary** — A driver with 3 or more violations is flagged as High Risk. Two violations — nothing happens. Three violations — the flag triggers. The BA must state that number explicitly. If they write "too many violations" instead of "3 or more," the developer has to guess where the line is — and that guess becomes a bug.
+**Boundary** — A jar of peanut butter must have enough to cover at least one full slice before spreading begins. If the jar has enough for half a slice, it fails. If it has enough for a full slice, it passes. The BA must state that condition explicitly. If they write "make sure there is enough peanut butter" instead of "sufficient to cover the full surface of one slice," the developer has to guess where the line is — and that guess becomes a bug.
 
 ## 📋 INVEST Framework
 
