@@ -29,23 +29,44 @@ This is a **team exercise**. You will work together in a shared Word document to
 | **Corner Case** | Two or more unusual conditions happening at the same time. |
 | **Happy Path** | The full flow from start to finish when nothing goes wrong. |
 | **Failure Path** | What happens when a step cannot be completed? What does the system do next? |
+| **Given / When / Then** | A structured way to write acceptance criteria. **Given** = the starting state. **When** = the action that occurs. **Then** = the expected outcome. |
 
----
+## 📊 Complexity Scale
+
+Every case you write must be rated by complexity. This tells the development team how much logic, error handling, and effort is required to build it.
+
+| Level | Maps To | What It Means for the Developer |
+|---|---|---|
+| 🟢 **Low** | Base Case | Standard input, predictable output. Straightforward to build. |
+| 🟡 **Medium** | Edge Case | Unusual but valid condition. Requires conditional logic and validation. |
+| 🔴 **High** | Corner Case | Multiple unusual conditions at once. Requires defensive logic, fallbacks, and testing. |
 
 ## 🧠 The Exercise
 
-As a team, your task is to open a shared Word document and write the complete, end-to-end process for making a Peanut Butter and Jelly sandwich — from acquiring the ingredients all the way through serving the final product. For every step in the process, your team must write the full description of what happens, the base case, at least two edge cases, at least one corner case, the failure path, and the acceptance criteria. The document must be written with enough clarity and detail that a developer who has never made a sandwich — and who will ask no follow-up questions — could build the process exactly as you intended.
+As a team, your task is to open a shared Word document and write the complete, end-to-end process for making a Peanut Butter and Jelly sandwich — from acquiring the ingredients all the way through serving the final product. For every step in the process, your team must write:
+
+1. The **full description** of what happens in this step
+2. The **base case** — standard input and expected output (🟢 Low)
+3. At least **2 edge cases** — unusual but valid conditions (🟡 Medium)
+4. At least **1 corner case** — two or more unusual conditions at the same time (🔴 High)
+5. The **failure path** — what happens if this step cannot be completed
+6. The **acceptance criteria** — how do you know this step is done correctly
+7. At least **one Given / When / Then** scenario per case
+
+The document must be written with enough clarity and detail that a developer who has never made a sandwich — and who will ask no follow-up questions — could build the process exactly as you intended.
 
 ## ✅ Team Definition of Done
 
 Your Word document is complete when the team can answer YES to every item below:
 
 - [ ] Every step has a full written description
-- [ ] Every step has a clearly written base case
-- [ ] Every step has at least 2 edge cases
-- [ ] At least one corner case is documented across any two steps
+- [ ] Every step has a clearly written base case (🟢 Low)
+- [ ] Every step has at least 2 edge cases (🟡 Medium)
+- [ ] Every step has at least 1 corner case (🔴 High)
+- [ ] At least one corner case spans two steps
 - [ ] Every step has a defined failure path
 - [ ] Every step has written acceptance criteria
+- [ ] Every step has at least one Given / When / Then scenario
 - [ ] The document reads as if the team assumed the reader knows nothing
 - [ ] Every team member has contributed and reviewed at least one step
 
