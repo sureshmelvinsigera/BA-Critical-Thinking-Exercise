@@ -12,7 +12,7 @@
 
 Before a BA can write a feature, they must first think like a system.
 
-This exercise uses something everyone knows — making a Peanut Butter and Jelly sandwich — to train BAs to think logically, algorithmically, and completely. The domain is simple on purpose. The thinking is not.
+This exercise uses something everyone knows — making a Peanut Butter and Jelly sandwich — to train BAs to think logically, algorithmically, and completely. If a BA cannot fully define a PB&J sandwich, they are not ready to define a software feature.
 
 ---
 
@@ -90,14 +90,14 @@ This is the test. If you can write it, it can be built. If you cannot write it, 
 ### Base Case / Edge Case / Corner Case covers every scenario
 Given / When / Then handles one scenario at a time. But users do not always arrive in perfect conditions. The case types force you to cover the full range:
 
-- **Base Case** — the scenario you write your first Given / When / Then for. Everything is normal.
+- **Base Case** — the normal, standard scenario for this step. Everything in this step goes right.
 - **Edge Case** — a valid but unusual scenario. Requires its own Given / When / Then.
 - **Corner Case** — two or more unusual conditions at once. Requires its own Given / When / Then, and usually more defensive logic.
 
 If you only write the base case, you have only written one test. Real systems fail on edge cases and corner cases.
 
 ### Happy Path / Failure Path defines the full flow
-- The **Happy Path** is the base case across all steps end to end — everything works, the sandwich is made, the user accepts it.
+- The **Happy Path** is what you get when every step hits its base case — the full process from start to finish with no edge cases, no failures, and no interruptions. It is not the same as the base case. The base case is one step. The happy path is all steps.
 - The **Failure Path** is what the system does at each step when something goes wrong. It is not enough to say "it fails." The BA must define what happens next: Does the process halt? Does it retry? Does it notify the user? Does it restart from a specific step?
 
 Without a defined failure path, the developer builds the happy path and hopes for the best. That is a production incident waiting to happen.
@@ -121,10 +121,10 @@ Before a user story is handed to development, it must pass INVEST. This is not a
 
 | Term | What It Means |
 |---|---|
-| **Base Case** | The most normal, standard scenario. What does "everything goes right" look like? |
+| **Base Case** | The normal, standard scenario for a single step. Everything in this step goes right. |
 | **Edge Case** | A valid but unusual condition. It can happen — it is just not the norm. |
 | **Corner Case** | Two or more unusual conditions happening at the same time. |
-| **Happy Path** | The full flow from start to finish when nothing goes wrong. |
+| **Happy Path** | The full process from start to finish when every step hits its base case. No edge cases, no failures, no interruptions. |
 | **Failure Path** | What happens when a step cannot be completed? What does the system do next? |
 | **Boundary** | The exact line between what is acceptable and what is not. The BA must define this number or condition precisely — if they do not, the developer will guess, and that guess becomes a bug. |
 | **Given / When / Then** | A structured way to write acceptance criteria. Given = the starting state. When = the action that occurs. Then = the expected outcome. |
@@ -147,13 +147,13 @@ This is a **team exercise**. You will work together in a shared Word document to
 
 Before you start writing, read through this reference. It shows all the concepts applied to the sandwich so you know exactly what each term looks like before you begin.
 
-**Base Case** — The user has all ingredients present, in-date, and at room temperature. The sandwich is made from start to finish without any interruptions.
+**Base Case** — For Step 1: all ingredients are present, in-date, and at room temperature. This step completes without interruption. The base case is always scoped to a single step — it does not describe the whole process.
 
 **Edge Case** — The bread is present but frozen. It is a valid ingredient — it is just not in a ready state. A thaw step must be inserted before the process can continue.
 
 **Corner Case** — The bread is frozen AND the jelly jar is expired AND the knife is not available. Three unusual conditions exist at the same time. Each must be resolved independently — fixing one does not fix the others.
 
-**Happy Path** — All ingredients are present and usable, both spreads are applied cleanly, the sandwich assembles without structural failure, and the user accepts it immediately upon serving.
+**Happy Path** — Every step hits its base case. All ingredients are present, both spreads are applied cleanly, the sandwich assembles without structural failure, and the user accepts it immediately upon serving. The happy path is the full process end to end — it is what you get when no step triggers an edge case or failure.
 
 **Failure Path** — The jelly jar is contaminated with peanut butter and the user has a nut allergy. The process halts immediately. The jar is discarded. The process cannot continue until a clean replacement is sourced.
 
