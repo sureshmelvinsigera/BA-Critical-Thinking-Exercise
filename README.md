@@ -14,7 +14,7 @@
 |---|---|---|
 | **0:00 – 0:35** | ✍️ Team Exercise | Work in your team. Open the shared Word document and write the complete, end-to-end process for making a PB&J sandwich. Every step must be fully documented before time is called. |
 | **0:35 – 0:50** | 🔍 Solution Review | The instructor solution is shared with your team. Read it. Compare it against what you wrote. Where did your process match? Where did it fall short? What did your team assume without writing it down? |
-| **0:50 – 1:00** | 💬 Full Group Discussion | Return to the main room. Each team shares their key takeaway. Why does a simple PB&J sandwich make a difference as a BA training exercise? What does it reveal about how you write requirements? |
+| **0:50 – 1:00** | 💬 Full Group Discussion | Return to the main room. Each team shares one thing their process missed and one assumption they made without writing it down. What does that gap look like in a real feature? What would a developer have built if you had handed them your document as written? |
 
 > 💡 **The exercise ends when the discussion ends — not when the document is finished.** The gaps your team finds during the review are the most valuable part of the session.
 
