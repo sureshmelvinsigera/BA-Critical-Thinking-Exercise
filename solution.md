@@ -502,11 +502,7 @@ Your Word document is complete when the team can answer YES to every item below:
 
 ## 💬 Final Thought
 
-If your team cannot fully define a sandwich, your team is not ready to define a feature.
-
-Every assumption you skip becomes a bug. Every edge case you miss becomes a support ticket. Every corner case you overlook becomes a production incident.
-
-The sandwich is simple on purpose. The thinking — and the writing — is the exercise.
+Every team finds gaps. That is the point. The sandwich is simple — and you still missed things. Now imagine what you are missing when the system is not simple.
 
 ---
 
