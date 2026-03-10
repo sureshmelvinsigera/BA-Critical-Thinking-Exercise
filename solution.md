@@ -12,7 +12,7 @@
 
 Before a BA can write a feature, they must first think like a system.
 
-This exercise uses something everyone knows — making a Peanut Butter and Jelly sandwich — to train BAs to think logically, algorithmically, and completely. If a BA cannot fully define a PB&J sandwich, they are not ready to define a software feature.
+This exercise uses something everyone knows — making a Peanut Butter and Jelly sandwich — to train BAs to think logically, algorithmically, and completely. The domain is simple on purpose. The thinking is not.
 
 ---
 
