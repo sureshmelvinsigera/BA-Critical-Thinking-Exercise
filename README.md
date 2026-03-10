@@ -42,10 +42,10 @@ This is a **team exercise**. You will work together in a shared Word document to
 
 | Term | What It Means |
 |---|---|
-| **Base Case** | The most normal, standard scenario. What does "everything goes right" look like? |
+| **Base Case** | The normal, standard scenario for a single step. Everything in this step goes right. |
 | **Edge Case** | A valid but unusual condition. It can happen — it is just not the norm. |
 | **Corner Case** | Two or more unusual conditions happening at the same time. |
-| **Happy Path** | The full flow from start to finish when nothing goes wrong. |
+| **Happy Path** | The full process from start to finish when every step hits its base case. No edge cases, no failures, no interruptions. |
 | **Failure Path** | What happens when a step cannot be completed? What does the system do next? |
 | **Given / When / Then** | A structured way to write acceptance criteria. **Given** = the starting state. **When** = the action that occurs. **Then** = the expected outcome. |
 
